@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title>Home page of Anastasia Kruchinina</title>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="description" content="Site Description Here" />
+<meta name="keywords" content="keywords, here" />
+<meta name="robots" content="index, follow, noarchive" />
+<meta name="googlebot" content="noarchive" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+</head>
+<body>
+
+	<!-- header starts-->
+	<div id="header-wrap"><div id="header" class="container">						
+		
+		<h1 id="logo-text"><a href="index.html" title="">Anastasia Kruchinina</a></h1>
+		<p id="intro">PhD student at Uppsala University</p>
+		
+		<!-- navigation -->
+		<div  id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li id="current"><a href="research.html">Research</a></li>
+				<li><a href="teaching.html">Teaching</a></li>	
+			</ul>		
+		</div>		
+							
+	
+	<!-- header ends here -->
+	</div></div>
+	
+	<!-- content starts -->
+	<div id="content-outer"><div id="content-wrapper" class="container">
+	
+		<!-- main -->
+		<div id="main" class="part_big">
+
+		<!-- navigation -->
+		<div>
+			<ul>
+				<li id="current"><a href="research.html">Projects</a></li>
+				<li><a href="research_publications.html">Publications</a></li>
+				<li><a href="research_seminars.html">Schools, conferences, seminars</a></li>
+				<li><a href="research_courses.html">Courses</a></li>	
+			</ul>		
+		</div>	
+				
+		<h3>Schools, conferences, seminars</h3>
+
+				<p class="pub"><a href="http://gamm-workshop.uni-koeln.de/">GAMM Workshop on Applied and Numerical Linear Algebra</a>, 2017, Cologne, Germany <br />
+				(Presentation: Parallel recursive polynomial expansion
+				for sparse density matrix construction in electronic structure calculations)</p>
+
+
+				
+			   <p class="pub"><a href="">
+                            </a>Seminar in the Numerical analysis group, KTH, 2017,
+                            Stockholm, Sweden<br />(<a class="report"			 
+href="https://www.kth.se/en/sci/institutioner/math/kalender/semna/anastasia-kruchinina-linear-scaling-techniques-in-electronic-structure-calculations-1.704108?date=2017-04-20&orgdate=2017-04-11&length=1&orglength=0">
+			    Presentation:</a>Linear scaling techniques in electronic structure calculations</p>
+
+
+
+			    <p class="pub"><a href="http://www.it.uu.se/conf/scicompswe2016/">
+                            Scientific Computing in Sweden</a>, 2016,
+                            Uppsala, Sweden<br />(<a class="report" 
+href="http://user.it.uu.se/~alido538/tdb16_registration/abstract_pdf/Anastasia_Kruchinina.pdf">Poster:</a>
+                            Computation of frontier orbitals in linear scaling electronic structure calculations.) </p>
+
+
+			    <p class="pub"><a href="http://www-conference.slu.se/mqm2016/index.html">
+                            The 8th Molecular Quantum Mechanics</a>, 2016,
+                            Uppsala, Sweden<br />(Poster:
+			    Computation of frontier orbitals in linear scaling electronic structure calculations.) </p>
+
+
+			<p class="pub"><a href="http://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=22112">
+			    17th SIAM Conference on Parallel
+			    Processing for Scientific Computing</a>, 2016,
+			    Paris, France<br />(<a class="report"
+			    href="files/presentations/pp16.pdf">Minisymposium
+			    presentation</a>:
+			    Parallel recursive density matrix
+			    expansion in electronic structure
+			    calculations.)</p>
+
+			<p class="pub">Presentation at the PhD student seminar, 2015, Uppsala, Sweden<br />(<a class="report" href="http://user.it.uu.se/~perl/seminar_abstracts/sem_fall15/kruchinina.html">Presentation</a>: Computation of interior eigenstates in
+electronic structure calculations.)</p>
+			<p class="pub">Presentation at the course <a href="https://studentportalen.uu.se/portal/portal/uusp/student/student-course?uusp-locale=en">Scientific Computing II</a> 2015, Uppsala, Sweden<br />(<a class="report" href="files/presentations/SciCompPresentation.pdf">Presentation</a>: Large scale electronic structure calculations.)</p>
+			<p class="pub"><a href="https://www.hpc2n.umu.se/events/workshops/BITcircus2015/"> BIT Circus 2015: Numerical Mathematics and Computational Science</a> 2015, Umea, Sweden<br />(<a class="report" href="files/presentations/UmeaStopCritPresentation.pdf">Presentation</a>: Parameterless stopping criteria for density matrix expansions.)</p>
+		        <p class="pub"><a href="http://www.cecam.org/workshop-1193.html"> CECAM-Workshop: Next generation quantum based molecular dynamics: Challenges and perspectives</a> 2015, Bremen, Germany<br />(<a class="report" href="files/posters/posterBremen.pdf">Poster</a>: Parameterless stopping criteria for density matrix expansions.)</p>
+			<p class="pub">Oslo-Uppsala Workshop on Scientific Computing Software 2014, Oslo, Norway</p>
+			<p class="pub"><a href="http://qleap.au.dk/education/sostrup-summer-school/">13th Sostrup summer school - Quantum chemistry and molecular properties</a> 2014, Sostrup, Denmark</p>		
+			<p class="pub"><a href="http://www.dmi.units.it/dobbiaco/">Dobbiaco summer school - Matrix Theory and Computation with Applications to Network Analysis, Quantum Chemistry and Dynamical Systems</a> 2014, Dobbiaco, Italy</p>
+			<p class="pub"><a href="http://www.mis.mpg.de/scicomp/winterschool/2013/index.html">Winter School on Hierarchical Matrices</a> 2013, Leipzig, Germany</p>
+			<p class="pub"><a href="http://www.mat.uniroma2.it/~tvmsscho/Rome-Moscow_School/index.html">Rome-Moscow school of Matrix Methods and Applied Linear Algebra</a> 2012, Moscow, Russia and Rome, Italy</p>
+			<p class="pub">Parallel programming contest Intel Accelerate Your Code 2012, team rank 25</p>
+
+
+		
+		<!-- main ends -->
+		</div>
+		
+		<!-- left-columns starts -->
+		<div id="left-columns" class="part">
+		
+
+				<div class="sidemenu">	
+					<h3>Menu</h3>
+					<ul>				
+						<li><a href="index.html">Home</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="teaching.html">Teaching</a></li>
+					</ul>	
+				</div>
+				
+				<div class="sidemenu">
+					<h3>Links</h3>
+					<ul>
+
+
+					  <li><a href="https://github.com/Tourmaline">My GitHub page</a></li>
+						<li><a href="http://www.uu.se/">Uppsala University</a></li>	
+						<li><a href="http://ergoscf.org/">ErgoSCF</a></li>	
+						<li><a href="http://chunks-and-tasks.org/">Chunks and Tasks</a></li>	
+					</ul>
+				</div>
+			
+			
+				<h3></h3>
+				<p>
+				&quot;Do not go where the path may lead, go instead where there is no path and leave a trail.&quot; </p>
+			
+				<p class="align-right"> - Ralph Waldo Emerson</p>	
+
+		
+		<!-- end left-columns -->
+		</div>		
+	
+	<!-- contents end here -->	
+	</div></div>
+
+	<!-- footer starts here -->	
+	<div id="footer-wrapper" class="container">
+
+	
+		<div id="footer-bottom">
+	
+			<p class="bottom-left">			
+			Last update: 2019 by アナスタシヤ
+			</p>	
+		</div>	
+			
+	</div>
+	<!-- footer ends here -->
+
+</body>
+</html>

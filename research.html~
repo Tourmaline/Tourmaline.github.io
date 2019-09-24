@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+
+<title>Home page of Anastasia Kruchinina</title>
+
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="description" content="Site Description Here" />
+<meta name="keywords" content="keywords, here" />
+<meta name="robots" content="index, follow, noarchive" />
+<meta name="googlebot" content="noarchive" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+</head>
+<body>
+
+	<!-- header starts-->
+	<div id="header-wrap"><div id="header" class="container">						
+		
+		<h1 id="logo-text"><a href="index.html" title="">Anastasia Kruchinina</a></h1>
+		<p id="intro">PhD student at Uppsala University</p>
+		
+		<!-- navigation -->
+		<div  id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li id="current"><a href="research.html">Research</a></li>
+				<li><a href="teaching.html">Teaching</a></li>	
+			</ul>		
+		</div>		
+							
+	
+	<!-- header ends here -->
+	</div></div>
+	
+	<!-- content starts -->
+	<div id="content-outer"><div id="content-wrapper" class="container">
+	
+		<!-- main -->
+		<div id="main" class="part_big">
+
+		<!-- navigation -->
+		<div>
+			<ul>
+				<li id="current"><a href="research.html">Projects</a></li>
+				<li><a href="research_publications.html">Publications</a></li>
+				<li><a href="research_seminars.html">Schools, conferences, seminars</a></li>
+				<li><a href="research_courses.html">Courses</a></li>	
+			</ul>		
+		</div>	
+
+		<h3>Posters</h3>
+		<a href="files/posters/ESC_poster.pdf"><img src="files/ESC_poster.jpg" alt="Parameterless stopping criteria, poster" style="width:100;height:142px;"></a>
+		<a href="files/posters/cht_poster.pdf"><img src="files/cht_poster.jpg" alt="Chunks and Tasks, poster" style="width:100;height:142px;"></a>
+		
+			<br />
+			<br />
+		
+			<h3>Project</h3>
+			<h4>Parallel large scale electronic structure calculations</h4>
+			<p>Electronic structure calculations are the one of the most computationally expensive tasks in scientific calculations. The electronic structure is the fundamental concept in many fields of science; it allows computing the probability to find an electron in certain position in space. 
+			The purpose of the research project is design and analysis of numerical methods and their efficient implementation in programs running on desktop and supercomputers. 
+
+			<br />
+			<br />
+
+			I am a part of the research group developing a parallelization framework <a href="http://chunks-and-tasks.org/">Chunks and Tasks</a> and a quantum chemistry program <a href="http://ergoscf.org/">ErgoSCF</a>.
+
+			<br />
+			<br />
+			 
+			In particular we are developing methods and software for electronic structure calculations using linear scaling techniques. We are designing algorithms based on recursive polynomial expansions to compute the one-electron density matrix for a given effective Hamiltonian matrix in for example Hartree-Fock or Kohn-Sham Density functional theory (DFT). Hartree-Fock method used as a initial point for many complex methods such as Coupled cluster or Configuration interaction methods. DFT is a good compromise between computational complexity and accuracy in many quantum chemistry applications. 
+
+			<br />
+			<br />
+
+			The linear scaling algorithms are combined with sparse matrix algebra and the parallelization framework Chunks and Tasks, which allows for efficient use of computers with many processors.
+
+			In order to get linear scaling we must use various computational approximations, such as truncation of small matrix elements, and it is important to be able to control the error in the computations.  The goal is to develop the error estimates which will allow to specify the desired accuracy in the electron density at the start of the program and to control the forward error of density matrix purification.
+			</p>
+
+		
+		<!-- main ends -->
+		</div>
+		
+		<!-- left-columns starts -->
+		<div id="left-columns" class="part">
+		
+
+				<div class="sidemenu">	
+					<h3>Menu</h3>
+					<ul>				
+						<li><a href="index.html">Home</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="teaching.html">Teaching</a></li>
+					</ul>	
+				</div>
+				
+				<div class="sidemenu">
+					<h3>Links</h3>
+					<ul>
+                                                <li><a href="https://github.com/Tourmaline">My GitHub page</a></li>
+						<li><a href="http://www.uu.se/">Uppsala University</a></li>	
+						<li><a href="http://ergoscf.org/">ErgoSCF</a></li>	
+						<li><a href="http://chunks-and-tasks.org/">Chunks and Tasks</a></li>	
+					</ul>
+				</div>
+			
+			
+				<h3></h3>
+				<p>
+				&quot;Do not go where the path may lead, go instead where there is no path and leave a trail.&quot; </p>
+			
+				<p class="align-right"> - Ralph Waldo Emerson</p>	
+
+		
+		<!-- end left-columns -->
+		</div>		
+	
+	<!-- contents end here -->	
+	</div></div>
+
+	<!-- footer starts here -->	
+	<div id="footer-wrapper" class="container">
+
+	
+		<div id="footer-bottom">
+	
+			<p class="bottom-left">			
+			Last update: 2019 by アナスタシヤ
+			</p>	
+		</div>	
+			
+	</div>
+	<!-- footer ends here -->
+
+</body>
+</html>

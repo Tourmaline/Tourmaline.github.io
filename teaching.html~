@@ -12,7 +12,7 @@
 <meta name="robots" content="index, follow, noarchive" />
 <meta name="googlebot" content="noarchive" />
 
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 
 </head>
 <body>
@@ -26,12 +26,13 @@
 		<!-- navigation -->
 		<div  id="nav">
 			<ul>
-				<li id="current"><a href="index.html">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="research.html">Research</a></li>
-				<li><a href="teaching.html">Teaching</a></li>	
+				<li id="current"><a href="teaching.html">Teaching</a></li>	
 			</ul>		
 		</div>		
-							
+		
+		<div><a id="header-image" href="http://mashabear.com/"></a></div> 						
 	
 	<!-- header ends here -->
 	</div></div>
@@ -41,46 +42,22 @@
 	
 		<!-- main -->
 		<div id="main" class="part_big">
-		
-			<img src="images/me.jpg" width="140" alt="firefox" class="float-left" />
-			<p><i>Division of Scientific Computing<br />
-				Department of Information Technology<br />
-				Uppsala University<br />
-				Sweden</i></p>
-			<br />
-			<p><b>anastasia.kruchinina(at)it.uu.se</b></p>
-			<br />
-			<br />
+		    Teaching assistant in the following courses:
 			<br /><br />
-
-			<h3>Welcome!</h3>
-			<p>I am currently a PhD student on Division of Scientific Computing at Uppsala University. I am developing methods for large scale electronic structure calculations, check details in the <a href="research.html">research</a> page. <p/>
+			<p class="pub"><a href="http://130.238.12.100/edu/course/homepage/hpb/vt14">High Performance Computing and Programming 2014</a><br />
+		        <p class="pub"><a href="https://studentportalen.uu.se/portal/portal/uusp/student/student-course?uusp.portalpage=true&entityId=130523&toolMode=studentUse">Scientific computing II ( Beräkningvetenskap II) 2015,2016</a><br />
+			<a class="report" href="teaching/bervet2">(Slides from "Problem solving" and matlab files)</a></p>      
+			<p class="pub"><a 
+href="https://studentportalen.uu.se/portal/portal/uusp/student/student-course?uusp-locale=en"</a>High Performance 
+Programming, Spring 2017, Spring 2019<br />			
 			
-			<p>My supervisors are <a href="http://www.it.uu.se/katalog/emaru152">Emanuel Rubensson</a> and <a href="http://www.it.uu.se/katalog/eliru955">Elias Rudberg</a>.<p/>
-
-			<br /> <br /> <br />
-			
-			<h3>Research interests</h3>
-			<h4>Electronic structure calculations</h4>
-		        <ul>
-				<li>Numerical methods and software for large-scale electronic structure calculations.</li>
-				<li>Linear scaling techniques to compute the density matrix, in particular recursive polynomial expansions.</li>
-			</ul>
-			<h4>Numerical linear algebra</h4>
-			<ul>
-				<li>Large sparse eigenvalue problems arising in linear scaling electronic structure calculations.</li>
-			</ul>
-			<h4>High performance computing</h4>
-			<ul>
-				<li>Efficient parallelization of the electronic structure software on distributed memory clusters.</li>
-			</ul>
-			
+		
 		<!-- main ends -->
 		</div>
 		
 		<!-- left-columns starts -->
 		<div id="left-columns" class="part">
-
+		
 				<div class="sidemenu">	
 					<h3>Menu</h3>
 					<ul>				
@@ -93,7 +70,6 @@
 				<div class="sidemenu">
 					<h3>Links</h3>
 					<ul>
-					        <li><a href="https://github.com/Tourmaline">My GitHub page</a></li>
 						<li><a href="http://www.uu.se/">Uppsala University</a></li>	
 						<li><a href="http://ergoscf.org/">ErgoSCF</a></li>	
 						<li><a href="http://chunks-and-tasks.org/">Chunks and Tasks</a></li>	
@@ -106,6 +82,7 @@
 				&quot;Do not go where the path may lead, go instead where there is no path and leave a trail.&quot; </p>
 			
 				<p class="align-right"> - Ralph Waldo Emerson</p>	
+			
 		
 		<!-- end left-columns -->
 		</div>		
@@ -120,7 +97,7 @@
 		<div id="footer-bottom">
 	
 			<p class="bottom-left">			
-			Last update: 08.07.2015 by アナスタシヤ
+			Last update: 2019 by アナスタシヤ
 			</p>	
 		</div>	
 			

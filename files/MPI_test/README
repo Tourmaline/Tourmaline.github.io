@@ -1,0 +1,9 @@
+Problem running OpenMPI/2.x with sbatch.
+
+Compilation:
+mpiCC -o worker worker.cc 
+mpiCC -o manager manager.cc
+
+Run:
+mpirun -np 1 ./manager 5
+
