@@ -1,0 +1,25 @@
+title: Anastasia's Notes
+description: "Notes on scientific computing, programming, and things I'm learning."
+baseurl: ""
+url: "https://Tourmaline.github.io"
+author: Anastasia Kruchinina
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: /notes/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "**/*.html~"
+  - "**/*.css~"
+  - vendor/
