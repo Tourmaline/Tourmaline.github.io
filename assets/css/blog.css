@@ -216,6 +216,39 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* =====================================================
+   SEARCH
+   ===================================================== */
+
+.search-wrap {
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.95rem;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  -webkit-appearance: none;
+}
+.search-input::placeholder { color: var(--text-light); }
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(123, 168, 87, 0.15);
+}
+
+.no-results {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/* =====================================================
    INDEX PAGE
    ===================================================== */
 
@@ -309,6 +342,66 @@ tr:last-child td { border-bottom: none; }
   color: var(--text-muted);
   font-style: italic;
   padding: 1rem 0;
+}
+
+.year-group { margin-bottom: 0.5rem; }
+
+.year-heading {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 1.5rem 0 0.5rem;
+}
+.year-group:first-child .year-heading { margin-top: 0; }
+
+/* =====================================================
+   TAGS PAGE
+   ===================================================== */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+.tag-cloud-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3em 0.7em;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.tag-cloud-item:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+.tag-count {
+  font-size: 0.75em;
+  opacity: 0.75;
+}
+
+.tag-groups { margin-top: 1rem; }
+
+.tag-group { margin-bottom: 2.5rem; }
+
+.tag-group-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
 }
 
 /* =====================================================

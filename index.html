@@ -16,17 +16,63 @@ title: "Notes"
   <span class="phd-link-card-arrow">&#8594;</span>
 </a>
 
-<p class="post-list-heading">All notes</p>
+<div class="search-wrap">
+  <input type="search" id="search-input" class="search-input" placeholder="Search notes&#x2026;" autocomplete="off">
+</div>
 
-<ul class="post-list">
-  {% for post in site.posts %}
-  <li>
-    <a class="post-list-item" href="{{ post.url | relative_url }}">
-      <span class="post-list-item-title">{{ post.title }}</span>
-      <span class="post-list-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-    </a>
-  </li>
+<div id="post-groups">
+  {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in postsByYear %}
+  <div class="year-group" data-year="{{ year.name }}">
+    <h3 class="year-heading">{{ year.name }}</h3>
+    <ul class="post-list">
+      {% for post in year.items %}
+      <li class="post-list-row"
+          data-title="{{ post.title | downcase }}"
+          data-tags="{{ post.tags | join: ' ' | downcase }}">
+        <a class="post-list-item" href="{{ post.url | relative_url }}">
+          <span class="post-list-item-title">{{ post.title }}</span>
+          <span class="post-list-item-date">{{ post.date | date: "%b %-d" }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
   {% else %}
-  <li class="no-posts">No notes yet.</li>
+  <p class="no-posts">No notes yet.</p>
   {% endfor %}
-</ul>
+</div>
+
+<p class="no-results" id="no-results" style="display:none">No notes match your search.</p>
+
+<script>
+(function () {
+  var input = document.getElementById('search-input');
+  var groups = document.querySelectorAll('.year-group');
+  var noResults = document.getElementById('no-results');
+
+  input.addEventListener('input', function () {
+    var q = this.value.toLowerCase().trim();
+    var totalVisible = 0;
+
+    groups.forEach(function (group) {
+      var rows = group.querySelectorAll('.post-list-row');
+      var groupVisible = 0;
+
+      rows.forEach(function (row) {
+        var match = !q
+          || row.dataset.title.indexOf(q) !== -1
+          || row.dataset.tags.indexOf(q) !== -1;
+        row.style.display = match ? '' : 'none';
+        if (match) groupVisible++;
+      });
+
+      group.style.display = groupVisible > 0 ? '' : 'none';
+      group.querySelector('.year-heading').style.display = q ? 'none' : '';
+      totalVisible += groupVisible;
+    });
+
+    noResults.style.display = (q && totalVisible === 0) ? '' : 'none';
+  });
+}());
+</script>

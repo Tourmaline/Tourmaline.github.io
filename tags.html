@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Tags"
+---
+
+<div class="page-intro">
+  <h1>Tags</h1>
+  <p>All notes grouped by tag.</p>
+</div>
+
+<div class="tag-cloud">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+  <a class="tag tag-cloud-item" href="#{{ tag[0] | slugify }}">
+    {{ tag[0] }} <span class="tag-count">{{ tag[1].size }}</span>
+  </a>
+  {% endfor %}
+</div>
+
+<div class="tag-groups">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+  {% assign tag_name = tag[0] %}
+  {% assign tag_posts = tag[1] | sort: "date" | reverse %}
+  <div class="tag-group" id="{{ tag_name | slugify }}">
+    <h2 class="tag-group-heading">{{ tag_name }}</h2>
+    <ul class="post-list">
+      {% for post in tag_posts %}
+      <li>
+        <a class="post-list-item" href="{{ post.url | relative_url }}">
+          <span class="post-list-item-title">{{ post.title }}</span>
+          <span class="post-list-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
