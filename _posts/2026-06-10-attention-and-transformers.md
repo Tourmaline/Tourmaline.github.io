@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Attention and transformers"
-date: 2026-06-09
+date: 2026-06-10
 tags: [machine-learning, statistics, ai, transformers, attention]
 math: true
 ---
@@ -13,7 +13,7 @@ A Transformer, according to the paper, is "a model architecture eschewing recurr
 
 The paper is concerned with transduction models transforming an input sequence into an output sequence, which is different from regression or classification tasks. At the time of publication, Recurrent Neural Networks (RNNs) and Long Short-Term Memory Networks (LSTMs) were the dominant models for sequence transduction. Both are sequential in nature: they process the input one element at a time, carrying information from previous steps forward. This makes parallelizing training difficult. Transformers, on the other hand, process the entire input sequence at once, allowing for significantly more parallelization.
 
-The Transformer has an encoder-decoder structure. The encoder reads the whole input and learns a rich set of representations. The decoder uses these representations to generate the output sequence one token at a time. The decoder is also auto-regressive, it feeds each generated token back as input for the next step, giving it access to all previously generated tokens. The trade-off is that token generation is sequential.
+The Transformer has an encoder-decoder structure. The encoder reads the whole input and learns a rich set of representations. The decoder uses these representations to generate the output sequence one token at a time. The decoder is also auto-regressive: it feeds each generated token back as input for the next step, giving it access to all previously generated tokens. The trade-off is that token generation is sequential.
 
 Both encoder and decoder are composed of a stack of identical layers, each with sub-layers that are either a multi-head self-attention function or a dense feed-forward network. Each sub-layer employs a residual connection, so the output is $\text{LayerNorm}(x + \text{Sublayer}(x))$. The residual connection helps mitigate the vanishing gradient problem: instead of rewriting the input at each layer, a layer just marks changes. If it has nothing to add, it passes the original input forward unchanged.
 
