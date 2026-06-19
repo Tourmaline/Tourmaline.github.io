@@ -92,7 +92,7 @@ $$
 which is the form we will use for the FFT.
 
 
-The magnitude of $X_j$ is $|X_j| = \sqrt{C_j^2 + S_j^2}$, which gives the amplitude of the frequency component, while the angle (or phase) of $X_j$ is $\phi_j = \arctan\frac{-S_j}{C_j}$ (the imaginary part of $X_j$ is $-S_j$), which indicates how much that frequency is shifted in time.
+The magnitude of $X_j$ is $\lvert X_j \rvert = \sqrt{C_j^2 + S_j^2}$, which gives the amplitude of the frequency component, while the angle (or phase) of $X_j$ is $\phi_j = \arctan\frac{-S_j}{C_j}$ (the imaginary part of $X_j$ is $-S_j$), which indicates how much that frequency is shifted in time.
 
 
 ### A note on the real case
