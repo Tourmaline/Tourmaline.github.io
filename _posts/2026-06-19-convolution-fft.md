@@ -76,7 +76,8 @@ Let $x[n]$ be the original signal, where $n = 0, 1, \ldots, N-1$.
 At frequency j, the DFT computes two real numbers:
 $$
 C_j = \sum_{n=0}^{N-1} x[n] \cos(2\pi j n / N)
-$$ and
+$$ 
+and
 $$
 S_j = \sum_{n=0}^{N-1} x[n] \sin(2\pi j n / N).
 $$
@@ -89,6 +90,7 @@ $$
 X_j = \sum_{n=0}^{N-1} x[n]\, e^{-i 2\pi j n / N},
 $$
 which is the form we will use for the FFT.
+
 
 The magnitude of $X_j$ is $|X_j| = \sqrt{C_j^2 + S_j^2}$, which gives the amplitude of the frequency component, while the angle (or phase) of $X_j$ is $\phi_j = \arctan\frac{-S_j}{C_j}$ (the imaginary part of $X_j$ is $-S_j$), which indicates how much that frequency is shifted in time.
 
