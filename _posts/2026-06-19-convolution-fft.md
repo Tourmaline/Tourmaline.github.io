@@ -76,7 +76,7 @@ Let $x[n]$ be the original signal, where $n = 0, 1, \ldots, N-1$.
 At frequency j, the DFT computes two real numbers:
 $$
 C_j = \sum_{n=0}^{N-1} x[n] \cos(2\pi j n / N)
-$$ 
+$$
 and
 $$
 S_j = \sum_{n=0}^{N-1} x[n] \sin(2\pi j n / N).
