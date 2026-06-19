@@ -50,6 +50,7 @@ So for circular convolution $out[0] = a[0]b_0 + a[2]b_2 + a[3]b_1$, while $out[2
 ## Cross-correlation
 
 Cross-correlation is a similar operation to convolution, but without the time flip of the second signal. Where convolution uses $b_{t-k}$ (the template reversed), cross-correlation slides the unflipped template $b$ over $a$:
+
 $$
 out[n] = \sum_{k} a[n+k]\, b_k
 $$
@@ -74,21 +75,29 @@ $\cos(2\pi j n / N)$ and $\sin(2\pi j n / N)$, where $n$ indicates where along t
 
 Let $x[n]$ be the original signal, where $n = 0, 1, \ldots, N-1$.
 At frequency j, the DFT computes two real numbers:
+
 $$
 C_j = \sum_{n=0}^{N-1} x[n] \cos(2\pi j n / N)
 $$
+
 and
+
 $$
 S_j = \sum_{n=0}^{N-1} x[n] \sin(2\pi j n / N).
 $$
+
 These represent how much of the cosine and sine wave at frequency j is present in the original signal. The DFT combines these into a single complex number:
+
 $$
 X_j = C_j - i S_j
 $$
+
 Equivalently, expanding the cosine and sine via Euler's formula, this is the single complex sum
+
 $$
 X_j = \sum_{n=0}^{N-1} x[n]\, e^{-i 2\pi j n / N},
 $$
+
 which is the form we will use for the FFT.
 
 
@@ -105,17 +114,21 @@ This symmetry means that the DFT of a real-valued signal is redundant, and we on
 ## Fast Fourier Transform
 
 The FFT uses symmetry properties of the DFT to compute it efficiently. In the FFT algorithm, we split the DFT formula into two parts: one for the even-indexed samples and one for the odd-indexed samples:
+
 $$
 X_j = E_j + W_j O_j,
 $$
+
 where $E_j = \sum_{n=0}^{N/2-1} x[2n] e^{-i 2\pi j n / (N/2)}$ is the DFT of the even-indexed samples, $O_j = \sum_{n=0}^{N/2-1} x[2n+1] e^{-i 2\pi j n / (N/2)}$ is the DFT of the odd-indexed samples, and $W_j = e^{-i 2\pi j / N}$ is the twiddle factor.
 
 Then we notice that $E_j$ and $O_j$ are themselves DFTs of size $N/2$, and $E_{j+N/2} = E_j$, $O_{j+N/2} = O_j$ (both periodic with period $N/2$). Moreover,  $W_{j+N/2} = e^{-i 2\pi (j+N/2) / N} = e^{-i 2\pi j / N} \cdot e^{-i \pi} = -W_j$.
 
 In summary, we get the following recursive formulas:
+
 $$
 X_j = E_j + W_j O_j, \quad \text{for } j = 0, 1, \ldots, N/2-1
 $$
+
 $$
 X_{j+N/2} = E_j - W_j O_j, \quad \text{for } j = 0, 1, \ldots, N/2-1
 $$
@@ -130,9 +143,11 @@ The complexity of the FFT algorithm is $O(N \log N)$, where $N$ is the length of
 
 
 The core idea is:
+
 $$
 \text{conv}(a, b) = \text{IFFT}(\text{FFT}(a_\text{padded}) \cdot \text{FFT}(b_\text{padded}))
 $$
+
 This turns an $O(N \cdot M)$ operation into $O(N' \log N')$, where $N' = \text{len}(a_\text{padded}) = \text{len}(b_\text{padded}) = N + M - 1$. 
 
 Note that pointwise multiplication in the frequency domain corresponds to *circular* convolution in the time domain, so we need to pad the input signals with zeros to prevent wrap-around effects. For linear convolution, we pad both signals to length $N' = N + M - 1$, where $N$ and $M$ are the lengths of the original signals. This ensures that the circular convolution computed by the FFT corresponds to the desired linear convolution. 
@@ -164,6 +179,7 @@ print(np.convolve(a, b))   # sanity check
 ```
 
 Like convolution, cross-correlation is computable via the FFT, with one extra conjugation (and the same zero-padding to avoid wrap-around):
+
 $$
 \text{corr}(a, b) = \text{IFFT}(\text{FFT}(a) \cdot \overline{\text{FFT}(b)})
 $$
