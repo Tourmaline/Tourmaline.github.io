@@ -8,7 +8,7 @@ math: true
 
 
 A group is a set of elements combined with an operation that satisfies four fundamental properties: closure, associativity, identity, and invertibility. 
-In mathematical terms, a group is defined as a pair $(G, *)$ where $G$ is a set and $*$ is a binary operation on $G$ that satisfies the following properties:
+In mathematical terms, a group is defined as a pair $(G, * )$ where $G$ is a set and $*$ is a binary operation on $G$ that satisfies the following properties:
 1. Closure: combining any two elements of the group results in another element of the group. For all $a, b \in G$, $a * b$ is also in $G$.
 2. Associativity: $(g * h) * k = g * (h * k)$ for all $g, h, k \in G$.
 3. Identity: there exists an element $e \in G$ such that for every element $g \in G$, $e * g = g * e = g$.
