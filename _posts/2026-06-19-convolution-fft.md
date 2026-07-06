@@ -86,7 +86,7 @@ $$
 S_j = \sum_{n=0}^{N-1} x[n] \sin(2\pi j n / N).
 $$
 
-These represent how much of the cosine and sine wave at frequency j is present in the original signal. The DFT combines these into a single complex number:
+These are dot products of the original signal with the cosine and sine waves at frequency j. They represent how much of the cosine and sine wave at frequency j is present in the original signal. The DFT combines these into a single complex number:
 
 $$
 X_j = C_j - i S_j
@@ -95,11 +95,25 @@ $$
 Equivalently, expanding the cosine and sine via Euler's formula, this is the single complex sum
 
 $$
-X_j = \sum_{n=0}^{N-1} x[n]\, e^{-i 2\pi j n / N},
+X_j = \sum_{n=0}^{N-1} x[n]\, e^{-i 2\pi j n / N}.
 $$
 
-which is the form we will use for the FFT.
+Note that $e^{-i 2\pi j n / N}$ are roots of unity. For example, for $N=8$ we have
 
+![The eight complex 8th roots of unity spaced evenly around the unit circle]({{ '/assets/images/image-dft-roots-of-unity.png' | relative_url }})
+
+
+The full DFT is the vector of all frequency components:
+
+$$
+X = [X_0, X_1, \ldots, X_{N-1}],
+$$
+
+which are the coefficients of the complex exponentials that make up the original signal:
+
+$$
+x[n] = \frac{1}{N} \sum_{j=0}^{N-1} X_j e^{i 2\pi j n / N}.
+$$
 
 The magnitude of $X_j$ is $\lvert X_j \rvert = \sqrt{C_j^2 + S_j^2}$, which gives the amplitude of the frequency component, while the angle (or phase) of $X_j$ is $\phi_j = \arctan\frac{-S_j}{C_j}$ (the imaginary part of $X_j$ is $-S_j$), which indicates how much that frequency is shifted in time.
 
@@ -182,4 +196,57 @@ Like convolution, cross-correlation is computable via the FFT, with one extra co
 
 $$
 \text{corr}(a, b) = \text{IFFT}(\text{FFT}(a) \cdot \overline{\text{FFT}(b)})
+$$
+
+
+
+
+## Fast multiplication of polynomials
+
+Let's say we have two polynomials $A(x)$ and $B(x)$ of degrees $N$ and $M$, respectively:
+
+$$
+A(x) = a_0 + a_1 x + a_2 x^2 + \ldots + a_N x^N
+$$
+
+and
+
+$$
+B(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_M x^M.
+$$
+
+We want to compute the product polynomial $C(x) = A(x) \cdot B(x)$, which will have degree $N + M$:
+
+$$
+C(x) = c_0 + c_1 x + c_2 x^2 + \ldots + c_{N+M} x^{N+M},
+$$
+where the coefficients $c_k$ are given by the convolution of the coefficients of $A$ and $B$:
+
+$$
+c_k = \sum_{i=0}^{k} a_i b_{k-i}, \quad \text{for } k = 0, 1, \ldots, N + M.
+$$
+
+A polynomial of degree $n$ can be uniquely determined by its values at $n+1$ distinct points. So, the same polynomial $A(x)$ can be represented by a vector of its coefficients $[a_0, a_1, \ldots, a_N]$ or by a vector of pairs of points and values $[(x_0, A(x_0)), (x_1, A(x_1)), \ldots, (x_N, A(x_N))]$.
+
+
+To efficiently compute the product polynomial $C(x)$, we can evaluate $A(x)$ and $B(x)$ at roots of unity, and use the split-and-combine strategy of the FFT to compute the product in the frequency domain.
+We first choose the transform size $L \geq N + M + 1$, so that all $N + M + 1$ coefficients of the product $C(x)$ fit without wrap-around. In practice we take $L$ to be the next power of two, which suits the FFT. Both coefficient vectors are then zero-padded to length $L$.
+Roots of unity are all solutions to the equation $x^L = 1$, and they are given by $\omega^k = e^{2\pi i k / L}$ for $k = 0, 1, \ldots, L-1$. 
+So we can evaluate $A(x)$ at these points:
+
+$$
+A(\omega^k) = \sum_{n=0}^{N} a_n \omega^{kn}, \quad k = 0, 1, \ldots, L-1.
+$$
+
+This form is exactly the DFT of the zero-padded coefficient vector $[a_0, a_1, \ldots, a_N, 0, \ldots, 0]$, up to the sign of the exponent (which is just a convention in which direction to move when enumerating the roots of unity).
+Evaluating $B(x)$ at the same roots of unity gives us $B(\omega^k)$, and we can compute the product polynomial in the frequency domain:
+
+$$
+C(\omega^k) = A(\omega^k) \cdot B(\omega^k), \quad k = 0, 1, \ldots, L-1
+$$
+
+Using the inverse DFT, we can recover the coefficients of $C(x)$ from its values at the roots of unity:
+
+$$
+c_n = \frac{1}{L} \sum_{k=0}^{L-1} C(\omega^k) \omega^{-kn}, \quad n = 0, 1, \ldots, L-1
 $$
