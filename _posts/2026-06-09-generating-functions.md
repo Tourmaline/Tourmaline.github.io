@@ -111,7 +111,7 @@ which is the generating function of a binomial random variable with parameters $
 Probability generating functions are built for non-negative integer-valued random variables. Coefficients of the generating function give you directly the probabilities.
 
 
-# Moment generating functions
+## Moment generating functions
 
 Extension of the probability generating function to real-valued random variables is called the moment generating function (mgf). It is defined as follows:
 
@@ -139,7 +139,7 @@ In this case, the integral defining the mgf diverges for $t \neq 0$.  And even i
 
 
 
-# Characteristic functions
+## Characteristic functions
 
 
 To solve the problem of non-existence of the mgf, we can use the characteristic function (cf), which is defined as follows:
