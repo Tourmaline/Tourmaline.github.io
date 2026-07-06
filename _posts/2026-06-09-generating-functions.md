@@ -21,6 +21,7 @@ Note that
 $$
 G(1) = \sum_{n=0}^{\infty} P(X = n) = 1,
 $$
+
 which is a consequence of the fact that the pmf sums to 1.
 
 Then, taking the first and second derivatives of $G(y)$ with respect to $y$ we have:
@@ -46,10 +47,13 @@ $$
 ### Example: geometric distribution
 
 Let $X$ be a geometric random variable with success probability $p$, i.e.,
+
 $$
 P(X = n) = (1-p)^{n-1} p = q^{n-1} p, \quad n = 1, 2, 3, \dots, \quad \text{where } q = 1-p.
 $$
+
 The probability generating function of $X$ is
+
 $$
 G(y) = \sum_{n=1}^{\infty} q^{n-1} p y^n = \frac{p y}{1 - q y}.
 $$
@@ -81,13 +85,16 @@ $$
 ### Example: Bernoulli distribution
 
 Let $X$ be a Bernoulli random variable with success probability $p$, i.e.,
+
 $$
 P(X = n) = \begin{cases}
 1-p, & n = 0, \\
 p, & n = 1.
 \end{cases}
 $$
+
 The probability generating function of $X$ is
+
 $$
 G(y) = (1-p) + p y = q + p y, \quad \text{where } q = 1-p.
 $$

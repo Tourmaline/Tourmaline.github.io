@@ -220,6 +220,7 @@ We want to compute the product polynomial $C(x) = A(x) \cdot B(x)$, which will h
 $$
 C(x) = c_0 + c_1 x + c_2 x^2 + \ldots + c_{N+M} x^{N+M},
 $$
+
 where the coefficients $c_k$ are given by the convolution of the coefficients of $A$ and $B$:
 
 $$
