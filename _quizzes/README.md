@@ -42,3 +42,4 @@ be close together.
 
 - `linear-algebra-pca.md`
 - `linear-algebra-groups-irreps.md`
+- `linear-algebra-equivariance.md` — follow-on to the irreps deck; do that one first
